@@ -1,0 +1,8 @@
+usr/include/streampu-*/*
+usr/lib/*/libstreampu*.so
+usr/lib/*/cmake/streampu/*
+# 3rdparty cpptrace library
+usr/include/ctrace/*
+usr/include/cpptrace/*
+usr/lib/*/libcpptrace.a
+usr/lib/*/cmake/cpptrace/*

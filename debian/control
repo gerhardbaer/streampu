@@ -1,0 +1,41 @@
+Source: streampu
+Section: devel
+Priority: optional
+Maintainer: Team AFF3CT <team.aff3ct@gmail.com>
+Build-Depends: cmake,
+               debhelper (>= 9),
+               quilt
+Standards-Version: 3.9.7
+Homepage: http://aff3ct.github.io/
+
+Package: libstreampu1
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: StreamPU - A DSEL for streaming applications
+ StreamPU is a Domain Specific Embedded Language (DSEL) for streaming
+ applications. It comes in the form of a C++11 library to link with.
+ .
+ Here are the main features of StreamPU:
+   - Definition of dataflow components: modules, tasks and sockets
+   - Elementary modules and tasks implementations
+   - Multi-threaded runtime with replication and pipeline parallel constructs
+ .
+ This DSEL/library is suitable for SDR systems, audio/video processing
+ and more generally it matches single-rate Synchronous DataFlow (SDF)
+ streaming applications.
+
+Package: libstreampu-dev
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, libstreampu1 (= ${binary:Version})
+Description: StreamPU - A DSEL for streaming applications (development files)
+ StreamPU is a Domain Specific Embedded Language (DSEL) for streaming
+ applications. It comes in the form of a C++11 library to link with.
+ .
+ Here are the main features of StreamPU:
+   - Definition of dataflow components: modules, tasks and sockets
+   - Elementary modules and tasks implementations
+   - Multi-threaded runtime with replication and pipeline parallel constructs
+ .
+ This DSEL/library is suitable for SDR systems, audio/video processing
+ and more generally it matches single-rate Synchronous DataFlow (SDF)
+ streaming applications.

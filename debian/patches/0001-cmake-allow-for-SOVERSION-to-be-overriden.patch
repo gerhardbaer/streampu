@@ -1,0 +1,33 @@
+From 3bee39497c1468f1303f49d6b111bb76f5a7a8a7 Mon Sep 17 00:00:00 2001
+From: Gerhard Baer <gerhard.baer@protonmail.com>
+Date: Thu, 9 Nov 2023 10:19:42 +0100
+Subject: [PATCH] cmake: allow for SOVERSION to be overriden.
+
+A DSO shall always have a correct SONAME, the major defines the API/ABI
+we want to expose.
+
+Signed-off-by: Gerhard Baer <Gerhard.Baer@protonmail.com>
+---
+ CMakeLists.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -25,6 +25,7 @@
+ option(SPU_SHOW_DEPRECATED     "Print message each time a deprecated func. is called"        OFF)
+ option(SPU_FAST                "Remove checks to speedup the code"                           OFF)
+ option(SPU_OVERRIDE_VERSION    "Compile without .git directory, provided a version and hash" OFF)
++option(SPU_OVERRIDE_SOVERSION "Fix shared library SONAME version"                            OFF)
+ 
+ if(NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.git" AND NOT SPU_OVERRIDE_VERSION)
+     message(FATAL_ERROR "The '.git' folder can't be found, StreamPU can't be compiled if it is not cloned "
+@@ -141,6 +142,9 @@
+ if(SPU_COMPILE_SHARED_LIB)
+     add_library(spu-shared-lib SHARED $<TARGET_OBJECTS:spu-obj>)
+     set_target_properties(spu-shared-lib PROPERTIES OUTPUT_NAME streampu POSITION_INDEPENDENT_CODE ON)
++    if(DEFINED SPU_OVERRIDE_SOVERSION)
++        set_property(TARGET spu-shared-lib APPEND PROPERTY SOVERSION ${SPU_OVERRIDE_SOVERSION})
++    endif()
+     list(APPEND spu_targets_list spu-shared-lib)
+     message(STATUS "StreamPU - Compile: shared library")
+ endif(SPU_COMPILE_SHARED_LIB)

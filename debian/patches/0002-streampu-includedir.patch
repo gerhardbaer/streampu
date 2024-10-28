@@ -1,0 +1,35 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -346,7 +346,7 @@
+         target_include_directories(${_target}
+                                    ${privacy}
+                                    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/${dir_build}/>
+-                                   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/${dir_install}>)
++                                   $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/${dir_install}>)
+     endforeach()
+ endmacro()
+ 
+@@ -472,19 +472,19 @@
+             DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/streampu/"
+             COMPONENT library)
+     install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu/
++            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/streampu/
+             COMPONENT headers
+             FILES_MATCHING PATTERN "*.h")
+     install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu/
++            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/streampu/
+             COMPONENT headers
+             FILES_MATCHING PATTERN "*.hpp")
+     install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu/
++            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/streampu/
+             COMPONENT headers
+             FILES_MATCHING PATTERN "*.hxx")
+     install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/rang/include/"
+-            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/rang
++            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/rang
+             COMPONENT headers
+             FILES_MATCHING PATTERN "*.hpp")
+ endif()

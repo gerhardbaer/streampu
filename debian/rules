@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+SPU_VERSION = 1.0.2
+SPU_SOVERSION = 1
+export SPU_OVERRIDE_VERSION = v$(SPU_VERSION)
+export SPU_OVERRIDE_SOVERSION = $(SPU_SOVERSION)
+
+
+%:
+	dh  $@ --parallel --buildsystem=cmake
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+		-DSPU_OVERRIDE_VERSION="$(SPU_OVERRIDE_VERSION)" \
+		-DSPU_OVERRIDE_SOVERSION=$(SPU_OVERRIDE_SOVERSION) \
+		-DSPU_COMPILE_SHARED_LIB=ON \
+		-DSPU_COMPILE_STATIC_LIB=OFF
+
+override_dh_auto_build:
+	dh_auto_build --parallel
+
+override_dh_auto_test:
+	:
+
+override_dh_auto_install:
+	dh_auto_install --buildsystem=cmake
