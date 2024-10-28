@@ -1,2 +1,3 @@
 0001-cmake-allow-for-SOVERSION-to-be-overriden.patch
 0002-streampu-includedir.patch
+0003-tests-sched.patch

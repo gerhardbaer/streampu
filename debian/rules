@@ -5,12 +5,15 @@ SPU_SOVERSION = 1
 export SPU_OVERRIDE_VERSION = v$(SPU_VERSION)
 export SPU_OVERRIDE_SOVERSION = $(SPU_SOVERSION)
 
+builddir	:= obj-$(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+destdir		:= debian/tmp
+
 
 %:
 	dh  $@ --parallel --buildsystem=cmake
 
 override_dh_auto_configure:
-	dh_auto_configure -- \
+	dh_auto_configure -B"$(builddir)" -- \
 		-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 		-DSPU_OVERRIDE_VERSION="$(SPU_OVERRIDE_VERSION)" \
 		-DSPU_OVERRIDE_SOVERSION=$(SPU_OVERRIDE_SOVERSION) \
@@ -21,7 +24,7 @@ override_dh_auto_build:
 	dh_auto_build --parallel
 
 override_dh_auto_test:
-	:
+	dh_auto_test --no-parallel -B"$(builddir)" -- BUILD_DIR="$(CURDIR)/$(builddir)"
 
 override_dh_auto_install:
 	dh_auto_install --buildsystem=cmake
