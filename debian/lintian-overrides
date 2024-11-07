@@ -1,0 +1,2 @@
+libstreampu1: binary-or-shlib-defines-rpath usr/lib/*
+libstreampu1: custom-library-search-path RPATH /usr/lib/gcc/*

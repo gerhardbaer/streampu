@@ -1,5 +1,5 @@
 Source: streampu
-Section: devel
+Section: libdevel
 Priority: optional
 Maintainer: Team AFF3CT <team.aff3ct@gmail.com>
 Build-Depends: cmake,
@@ -10,6 +10,7 @@ Homepage: http://aff3ct.github.io/
 
 Package: libstreampu1
 Architecture: amd64
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: StreamPU - A DSEL for streaming applications
  StreamPU is a Domain Specific Embedded Language (DSEL) for streaming
