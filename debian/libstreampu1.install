@@ -1,1 +1,3 @@
 usr/lib/*/libstreampu*.so.*
+# 3rdparty cpptrace library
+usr/lib/*/libcpptrace*.so.*

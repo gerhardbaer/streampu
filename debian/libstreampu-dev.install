@@ -4,5 +4,5 @@ usr/lib/*/cmake/streampu/*
 # 3rdparty cpptrace library
 usr/include/ctrace/*
 usr/include/cpptrace/*
-usr/lib/*/libcpptrace.a
+usr/lib/*/libcpptrace*.so
 usr/lib/*/cmake/cpptrace/*
