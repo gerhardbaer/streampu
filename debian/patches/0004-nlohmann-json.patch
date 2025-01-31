@@ -1,0 +1,22 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -375,7 +375,7 @@
+     message(STATUS "StreamPU - Header found: nlohmann_json")
+ else()
+     message(FATAL_ERROR "AFF3CT - MIPP can't be found, try to init the submodule with the following cmd:\n"
+-                        "$ git submodule update --init -- ../lib/MIPP/")
++                        "$ git submodule update --init -- ../lib/json/")
+ endif()
+ 
+ # ---------------------------------------------------------------------------------------------------------------------
+@@ -496,6 +496,10 @@
+             DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/rang
+             COMPONENT headers
+             FILES_MATCHING PATTERN "*.hpp")
++    install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/lib/json/include/nlohmann/"
++            DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/streampu-${SPU_VERSION_FULL}/json
++            COMPONENT headers
++            FILES_MATCHING PATTERN "*.hpp")
+ endif()
+ 
+ # ---------------------------------------------------------------------------------------------------------------------
