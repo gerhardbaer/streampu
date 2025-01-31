@@ -135,6 +135,9 @@
 #ifndef TASK_HPP_
 #include <Runtime/Task/Task.hpp>
 #endif
+#ifndef SCHEDULER_FROM_FILE_HPP__
+#include <Scheduler/From_file/Scheduler_from_file.hpp>
+#endif
 #ifndef SCHEDULER_OTAC_HPP__
 #include <Scheduler/OTAC/Scheduler_OTAC.hpp>
 #endif
@@ -252,11 +255,20 @@
 #ifndef SYSTEM_MEMORY_HPP__
 #include <Tools/System/memory.hpp>
 #endif
+#ifndef THREAD_BARRIER_STANDARD_HPP_
+#include <Tools/Thread/Thread_barrier/Standard/Thread_barrier_standard.hpp>
+#endif
 #ifndef THREAD_PINNING_HPP
-#include <Tools/Thread_pinning/Thread_pinning.hpp>
+#include <Tools/Thread/Thread_pinning/Thread_pinning.hpp>
 #endif
 #ifndef THREAD_PINNING_UTILS_HPP
-#include <Tools/Thread_pinning/Thread_pinning_utils.hpp>
+#include <Tools/Thread/Thread_pinning/Thread_pinning_utils.hpp>
+#endif
+#ifndef THREAD_POOL_STANDARD_HPP_
+#include <Tools/Thread/Thread_pool/Standard/Thread_pool_standard.hpp>
+#endif
+#ifndef THREAD_POOL_HPP_
+#include <Tools/Thread/Thread_pool/Thread_pool.hpp>
 #endif
 
 #endif

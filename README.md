@@ -167,7 +167,7 @@ cmake .. -DStreamPU_DIR=/opt/streampu/lib/cmake/streampu -Dcpptrace_DIR=/opt/str
 
 ## Documentation
 
-- [User documentation](https://largo.lip6.fr/~cassagnea/docs/UFR/MU5IN160/CM/CM5_AFF3CT_for_Streaming_Apps.pdf)
+- User documentation - [[Slides with animations](https://largo.lip6.fr/~cassagnea/docs/spu/StreamPU_slides_anim.pdf)] / [[Slides without animation](https://largo.lip6.fr/~cassagnea/docs/spu/StreamPU_slides_no_anim.pdf)]
   * Slides used to teach `StreamPU` to Master students in Computer Science at 
   [Sorbonne University](https://www.sorbonne-universite.fr/)
   * Contains many illustrative and simple use cases: **a good document to start 
@@ -185,6 +185,6 @@ The project is licensed under the MIT license.
 The main contributions of this work are described in the following journal 
 article:  
 - A. Cassagne, R. Tajan, O. Aumage, D. Barthou, C. Leroux and C. Jégo,  
-  “**A DSEL for High Throughput and Low Latency Software-Defined Radio on Multicore CPUs**,“  
+  “**StreamPU: A DSEL for High Throughput and Low Latency Software-Defined Radio on Multicore CPUs**,“  
   *Wiley Concurrency and Computation: Practice and Experience (CCPE)*, 2023.  
-  [[Open access article](https://doi.org/10.1002/cpe.7820)] [[Bibtex entry](https://aff3ct.github.io/resources/bibtex/Cassagne2023%20-%20A%20DSEL%20for%20High%20Throughput%20and%20Low%20Latency%20Software-Defined%20Radio%20on%20Multicore%20CPUs.bib)]
+  [[Open access article](https://doi.org/10.1002/cpe.7820)] [[Bibtex entry](https://aff3ct.github.io/resources/bibtex/Cassagne2023%20-%20StreamPU%20A%20DSEL%20for%20High%20Throughput%20and%20Low%20Latency%20Software-Defined%20Radio%20on%20Multicore%20CPUs.bib)]
