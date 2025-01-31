@@ -1,3 +1,9 @@
+streampu (1.3.0-1) unstable; urgency=medium
+
+  * Update to v1.3.0 + git 2025/01/23 (65d2f2f0).
+
+ -- Gerhard Baer <Gerhard.Baer@protonmail.com>  Fri, 31 Jan 2025 13:55:38 +0100
+
 streampu (1.0.2-1) unstable; urgency=medium
 
   * Initial package from v1.0.2 tag.
